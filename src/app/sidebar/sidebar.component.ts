@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SIDEBARComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modal:NgbModal) { }
+
+  nombreObtenido:any;
+  imagenObtenida:any;
+  referenciaObtenida:any;
 
   ngOnInit(): void {
+  }
+
+  mandarDatos(nombre:any, imagen:any, referencia:any){
+    this.nombreObtenido = nombre;
+    this.imagenObtenida = imagen;
+    this.referenciaObtenida = referencia;
   }
 
 }
